@@ -1,18 +1,18 @@
 $(document).ready(function () {
 
-    var animals = ['Zebra', 'Dog', 'Monkey', 'Lion'];
+    var players = ['Zebra', 'Dog', 'Monkey', 'Lion'];
 
     function displayGif() {
         var apiKey = "9V10bedkl8Zw8yQHk7WBLA6XZkGgEgRX";
-        var animal = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=" + apiKey + "&limit=10";
+        var player = $(this).attr("data-name");
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + player + "&api_key=" + apiKey + "&limit=10";
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).done(function (response) {
             console.log(response);
-            $('#animalsView').empty();
+            $('#playersView').empty();
 
             for (var i = 0; i < response.data.length; i++) {
                 var rating = response.data[i].rating;
@@ -28,7 +28,7 @@ $(document).ready(function () {
                 image.attr('data-still', imageStillUrl);
                 image.attr('data-animate', imageUrl);
 
-                $('#animalsView').prepend(image, ratingText);
+                $('#playersView').prepend(image, ratingText);
                 checkState();
             }
 
@@ -40,32 +40,35 @@ $(document).ready(function () {
     function createButtons() {
 
         $('#buttonsView').empty();
-        for (var i = 0; i < animals.length; i++) {
+        for (var i = 0; i < players.length; i++) {
             var newButton = $('<button class="btn btn-primary">');
-            newButton.addClass('animal');
-            newButton.attr('data-name', animals[i]);
-            newButton.text(animals[i]);
+            newButton.addClass('player');
+            newButton.attr('data-name', players[i]);
+            newButton.text(players[i]);
             $('#buttonsView').append(newButton);
+
         }
+
     };
 
-    $('#addAnimal').on('click', function () {
+    $('#addSoccerPlayer').on('click', function () {
 
-        var animal = $('#animal-input').val().trim();
-        animals.push(animal);
+        var player = $('#soccer-input').val().trim();
+        players.push(player);
+        $("#soccer-input").val(''); //remove the value from input field once added
         createButtons();
         return false;
     });
 
 
-    $(document).on('click', '.animal', displayGif);
+    $(document).on('click', '.player', displayGif);
 
     createButtons();
 
     function checkState() {
         $('img').on('click', function () {
             var state = $(this).attr('data-state');
-            if (state == 'still') {
+            if (state === 'still') {
                 $(this).attr('src', $(this).data('animate'));
                 $(this).attr('data-state', 'animate');
             } else {

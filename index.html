@@ -2,27 +2,27 @@
 
 <head>
     <title>GifTastic</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1 id="text">Animal GIFs</h1>
-            <p>Click a button bellow to generate animal gifs or add a button of your own!</p>
+            <h1 id="text">Soccer GIFs</h1>
+            <p>Click a button bellow to generate soccer player gifs or add a button of your own!</p>
             <div id="buttonsView"></div>
             <form class="form-horizontal">
                 <fieldset>
                     <div class="form-group">
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="animal-input" placeholder="Add an animal">
+                            <input type="text" class="form-control" id="soccer-input" placeholder="Add a player">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-lg-10">
-                            <button type="submit" class="btn- btn-primary" id="addAnimal">Add Animal</button>
+                            <button type="submit" class="btn- btn-primary" id="addSoccerPlayer">Add Player</button>
                         </div>
                     </div>
                 </fieldset>
@@ -31,7 +31,7 @@
     </div>
     <div class="panel panel-default" id="panelBody">
         <div class="panel-body">
-            <div id="animalsView">
+            <div id="playersView">
             </div>
         </div>
     </div>

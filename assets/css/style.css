@@ -1,0 +1,37 @@
+
+body {
+	background-image: url("../images/free-vector-zebra-print-background.png");
+}
+.btn {
+	margin-right: 10px;
+}
+
+form, input {
+	margin-right: 10px;
+}
+
+#soccer-input {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+img {
+	margin: 10px;
+
+}
+#gifPanel {
+	border: solid #ff4136 2px;
+}
+
+#text {
+	color: black;
+}
+#panelBody {
+	background-color: black;
+	border: 0;
+	box-shadow: none;
+	border-bottom: solid #ff4136 5px;
+}
+#rating {
+	margin: 10px;
+	color: #ff4136;
+}
