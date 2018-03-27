@@ -41,7 +41,7 @@ $(document).ready(function () {
 
         $('#buttonsView').empty();
         for (var i = 0; i < players.length; i++) {
-            var newButton = $('<button class="btn btn-primary">');
+            var newButton = $('<button class="btn btn-lg btn-danger">');
             newButton.addClass('player');
             newButton.attr('data-name', players[i]);
             newButton.text(players[i]);
@@ -51,19 +51,20 @@ $(document).ready(function () {
 
     };
 
-    $('#addSoccerPlayer').on('click', function () {
+    $('#addSoccerPlayer').on('click', function (event) {
+
+        event.preventDefault();
 
         var player = $('#soccer-input').val().trim();
         players.push(player);
-        $("#soccer-input").val(''); //remove the value from input field once added
+        $("#soccer-input").val(''); //empty input field once players is added
+
         createButtons();
         return false;
     });
 
 
     $(document).on('click', '.player', displayGif);
-
-    createButtons();
 
     function checkState() {
         $('img').on('click', function () {
