@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    var players = ['Zebra', 'Dog', 'Monkey', 'Lion'];
+    var players = [];
 
     function displayGif() {
         var apiKey = "9V10bedkl8Zw8yQHk7WBLA6XZkGgEgRX";
